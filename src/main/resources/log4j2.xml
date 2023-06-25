@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="logPath">target/logs</Property>
+		<Property name="rollingFileName">LogFile</Property>
+	</Properties>
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%m%n" />
+		</Console>
+		<File name="rollingFile" fileName="${logPath}/${rollingFileName}.log">
+			<PatternLayout pattern="%m%n" />
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="Info">
+			<AppenderRef ref="console" level="trace" />
+			<AppenderRef ref="rollingFile" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>
